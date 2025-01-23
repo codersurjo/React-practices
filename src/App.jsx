@@ -1,5 +1,6 @@
 import Actor from "./Actor";
 import DiffrentProps from "./DiffrentProps";
+import Singer from "./Singer";
 
 const App = () => {
   const DefaultCss = {
@@ -8,8 +9,15 @@ const App = () => {
     textAlign: "center"
   }
 
+  // Actor jsx 
+  const Actors = ['sakib', 'Ruble', 'Jasim', 'Anup'];
 
-  const Actors = ['sakib', 'Ruble', 'Jasim', 'Anup']
+  // Singer Object passing
+
+  const Singers = [
+    {name: 'Runa Laila', Age:60},
+    {name: 'Runa Laila 1', Age:61}
+  ]
 
   return (
     <div style={DefaultCss}>
@@ -25,10 +33,19 @@ const App = () => {
         <DiffrentProps task="Diffrent Way to Working" isDone={false}></DiffrentProps> 
 
         {/* Actor component  */}
+        <h3>Array Based</h3>
         {
           Actors.map(actor => <Actor name={actor}></Actor>)
         }
 
+        
+        {/* // singers jsx file  */}
+
+        <h3>Object Based Mapping</h3>
+        {
+          Singers.map(singer => <Singer singer={singer}></Singer> )
+        }
+      
     </div>
   );
 };
