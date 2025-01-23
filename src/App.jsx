@@ -1,3 +1,4 @@
+import Actor from "./Actor";
 import DiffrentProps from "./DiffrentProps";
 
 const App = () => {
@@ -7,6 +8,8 @@ const App = () => {
     textAlign: "center"
   }
 
+
+  const Actors = ['sakib', 'Ruble', 'Jasim', 'Anup']
 
   return (
     <div style={DefaultCss}>
@@ -19,7 +22,12 @@ const App = () => {
 
         {/* Diffrent way props conditional rendering */}
         <DiffrentProps task="Learn React" isDone={true}></DiffrentProps>
-        <DiffrentProps task="Diffrent Way to Working" isDone={false}></DiffrentProps>
+        <DiffrentProps task="Diffrent Way to Working" isDone={false}></DiffrentProps> 
+
+        {/* Actor component  */}
+        {
+          Actors.map(actor => <Actor name={actor}></Actor>)
+        }
 
     </div>
   );

@@ -59,11 +59,27 @@
 
 //Conditional Rendering option 5 (using OR operator)
 
+// const DiffrentProps = ({task,isDone}) => {
+//     return(
+//         <li>{task} {isDone || ': Not Done'}</li>
+//     )
+// };
+
+//Conditional Rendering option 6 
+
 const DiffrentProps = ({task,isDone}) => {
-    return(
-        <li>{task} {isDone || ': Not Done'}</li>
-    )
+    let listItem ;
+    
+     if(isDone){
+        listItem = <li>Finish: {task}</li>
+     }
+     else{
+        listItem = <li>Work On: {task}</li>
+     }
+     return listItem;
 };
+
+
 
 
 
